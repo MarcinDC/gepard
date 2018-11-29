@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Seller
+from .models import Product, Seller, ProductPrice
 
 # Register your models here.
 
@@ -18,3 +18,9 @@ class SellerAdmin(admin.ModelAdmin):
     list_display = ('code', 'name', 'rate_count', 'stars')
     list_filter = ('code', 'name', 'rate_count', 'stars')
     search_fields = ('code', 'name', 'rate_count', 'stars')
+
+
+@admin.register(ProductPrice)
+class ProductPriceAdmin(admin.ModelAdmin):
+    fields = ('product', 'seller', 'price', 'pricedate', 'delivery')
+    list_distplay = ('product', 'seller', 'price', 'pricedate', 'delivery')

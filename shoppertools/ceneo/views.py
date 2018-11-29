@@ -12,3 +12,5 @@ def all_products(request):
 def all_sellers(request):
     sellers = Seller.objects.all()
     return render(request, 'all_sellers.html', {'sellers': sellers})
+
+
