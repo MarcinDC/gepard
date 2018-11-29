@@ -12,3 +12,8 @@ class Product(models.Model):
         return self.name
 
 
+class Seller(models.Model):
+    code = models.CharField(max_length=20, null=False)
+    name = models.CharField(max_length=100, null=False)
+    rate_count = models.IntegerField(null=True, blank=True)
+    stars = models.IntegerField(null=True, blank=True)
